@@ -4,4 +4,5 @@ export interface Course {
     name: string;
     level: CourseLevel;
     active: boolean;
+    duration: number;
 }

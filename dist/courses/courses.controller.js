@@ -24,6 +24,12 @@ let CoursesController = class CoursesController {
     getAllCourses(level) {
         return this.coursesService.getAllCourses(level);
     }
+    getActiveCourses() {
+        return this.coursesService.getActiveCourses();
+    }
+    getCoursesByName(name) {
+        return this.coursesService.getCoursesByName(name);
+    }
     getOneCourse(id) {
         const course = this.coursesService.getOneCourse(Number(id));
         if (!course) {
@@ -43,6 +49,19 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], CoursesController.prototype, "getAllCourses", null);
+__decorate([
+    (0, common_1.Get)('active'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], CoursesController.prototype, "getActiveCourses", null);
+__decorate([
+    (0, common_1.Get)('search'),
+    __param(0, (0, common_1.Query)('name')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], CoursesController.prototype, "getCoursesByName", null);
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),

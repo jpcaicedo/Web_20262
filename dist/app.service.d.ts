@@ -5,5 +5,6 @@ export declare class AppService {
     getInfo(): {
         name: string;
         message: string;
+        course: string;
     };
 }

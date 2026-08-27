@@ -12,6 +12,7 @@ export class AppService {
         'NestJS Application',
       ),
       message: 'La aplicación está funcionando',
+      course: this.configService.get<string>('CLASS_GROUP', 'Catalog'),
     };
   }
 }

@@ -5,5 +5,6 @@ export declare class AppController {
     getInfo(): {
         name: string;
         message: string;
+        course: string;
     };
 }

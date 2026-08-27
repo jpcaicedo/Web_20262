@@ -4,6 +4,7 @@ exports.CreateCourseDto = void 0;
 class CreateCourseDto {
     name;
     level;
+    duration;
 }
 exports.CreateCourseDto = CreateCourseDto;
 //# sourceMappingURL=create-course.dto.js.map

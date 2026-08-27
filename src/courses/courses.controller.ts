@@ -20,6 +20,14 @@ export class CoursesController {
     return this.coursesService.getAllCourses(level);
   }
 
+  @Get('active')
+  getActiveCourses() {
+    return this.coursesService.getActiveCourses();
+  }
+@Get('search')
+  getCoursesByName(@Query('name') name: string) {
+    return this.coursesService.getCoursesByName(name);
+  }
   @Get(':id')
   getOneCourse(@Param('id') id: string) {
     const course = this.coursesService.getOneCourse(Number(id));

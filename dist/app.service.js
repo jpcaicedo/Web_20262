@@ -21,6 +21,7 @@ let AppService = class AppService {
         return {
             name: this.configService.get('APP_NAME', 'NestJS Application'),
             message: 'La aplicación está funcionando',
+            course: this.configService.get('CLASS_GROUP', 'Catalog'),
         };
     }
 };

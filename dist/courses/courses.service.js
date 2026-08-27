@@ -14,19 +14,29 @@ let CoursesService = class CoursesService {
             id: 1,
             name: 'HTML y CSS',
             level: 'basic',
-            active: true,
+            active: false,
+            duration: 20,
         },
         {
             id: 2,
             name: 'TypeScript',
             level: 'intermediate',
             active: true,
+            duration: 30,
         },
         {
             id: 3,
             name: 'Docker',
             level: 'intermediate',
             active: true,
+            duration: 25,
+        },
+        {
+            id: 4,
+            name: 'NestJS',
+            level: 'advanced',
+            active: true,
+            duration: 40,
         },
     ];
     getAllCourses(level) {
@@ -38,12 +48,19 @@ let CoursesService = class CoursesService {
     getOneCourse(id) {
         return this.courses.find((course) => course.id === id);
     }
+    getActiveCourses() {
+        return this.courses.filter((course) => course.active === true);
+    }
+    getCoursesByName(name) {
+        return this.courses.filter((course) => course.name.toLowerCase().includes(name.toLowerCase()));
+    }
     createCourse(data) {
         const newCourse = {
             id: this.courses.length + 1,
             name: data.name,
             level: data.level,
             active: true,
+            duration: data.duration,
         };
         this.courses.push(newCourse);
         return newCourse;
